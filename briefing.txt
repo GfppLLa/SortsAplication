@@ -12,7 +12,9 @@
 
                     ->heapsort
                         heaped.c heaped.h
-
+disclaimer:
+    the use of thwo or more functon in each sort:
+    ->objective: the return of the time of the execution throught the proto sort functions
         ->generate random array of different size
         ->check the time of every sort to sort the array
         -> export the time in file
