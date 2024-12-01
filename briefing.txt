@@ -1,0 +1,18 @@
+
+
+        ->implement
+                    ->quicksort
+                        quicked.c quicked.h
+
+                    ->bubblesort
+                        bubbloed.c bubbloed.h
+
+                    ->shellsort
+                        shelled.c shelled.h
+
+                    ->heapsort
+                        heaped.c heaped.h
+
+        ->generate random array of different size
+        ->check the time of every sort to sort the array
+        -> export the time in file
