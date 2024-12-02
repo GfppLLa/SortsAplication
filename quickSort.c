@@ -1,11 +1,15 @@
 #include <time.h>
+#include "verifySort.h"
+#include "arrayToFile.h"
 double protoQSort(int*contentArray, int target)
 {
     clock_t start, end;
     start=clock();
     quickSort(contentArray,0, target);
     end=clock();
-
+    char*expel=__func__;
+    if(verifyIfSort(contentArray, target)==0){arrayNotSorted(expel);}
+    void arrayWriteToFile(contentArray, target, expel);
     return ((double)(end-start)/CLOCKS_PER_SEC);
 
 }

@@ -1,0 +1,1 @@
+void arrayWriteToFile(int*contentArray, int size, char*title);

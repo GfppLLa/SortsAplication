@@ -15,7 +15,13 @@
 disclaimer:
     the use of thwo or more functon in each sort:
     ->objective: the return of the time of the execution throught the proto sort functions
-    
+
         ->generate random array of different size
         ->check the time of every sort to sort the array
         -> export the time in file
+
+        --------------------------------------------------
+
+        notes:
+        the function to verify sort and to save the sort array to file are almost done
+        this way the main file is almost over and will only need the implementations files 
