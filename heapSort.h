@@ -1,1 +1,1 @@
-int protoSSort(int*contentArray);
+int protoHSort(int*contentArray);

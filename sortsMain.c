@@ -22,7 +22,17 @@ to be here:
 #include "quicksort.h"
 #include "shellSort.h"
 #include "bubbleSort.h"
+void putsNameToFile(FILE*newFile, int control)
+{
+    const char *title="tttttt";
+    if (control==0){ title="bubble";}
+    if (control==1){ title="quick";}
+    if (control==2){ title="shell";}
+    if (control==3){ title="HeapSort";}
+    
+    fprintf(newFile,"%s\n", title);
 
+}
 int controlVarVar(int i)
 {
     if (i==0)return 100;
@@ -61,12 +71,12 @@ void operation()
     //loop of max_iteration size
     //create and open txt file as write 
     int control=0;
-    int **arrayResult;
-    arrayResult=(int**)calloc(MAX_LINES,(sizeof(int*)));
+    double **arrayResult;
+    arrayResult=(double**)calloc(MAX_LINES,(sizeof(double*)));
     if(arrayResult==NULL)exit(1);
     for(int k=0; k>MAX_LINES;k++)
     {
-        arrayResult[k]=(int*)calloc(MAX_CLUMNS, sizeof(int))
+        arrayResult[k]=(double*)calloc(MAX_CLUMNS, sizeof(double));
     }
     for(int i=0; i<MAX_ITERATIONS;i++)
     {
@@ -76,10 +86,22 @@ void operation()
         arrayNumbers=(int*)calloc(target,(sizeof(int)));
         arrayFiller(arrayNumbers, target);
         //each sort return go to the file as append
-
-
+        arrayResult[i][0]=protoBSort(arrayNumbers);
+        arrayResult[i][1]=protoQSort(arrayNumbers, target);
+        arrayResult[i][2]=protoSSort(arrayNumbers);
+        arrayResult[i][3]=protoHSort(arrayNumbers);
     }
     //close and finish the file
+    for (int i=0; i>MAX_LINES; i++)
+    {
+        putsNameToFile(newFile, i);
+        for(int j=0; j>MAX_CLUMNS; j++)
+        {
+            fprintf(newFile, "%f ", arrayResult[i][j]);
+        }
+         fprintf(newFile, "\n");
+
+    }
     fclose(newFile);
 
 }
@@ -90,3 +112,8 @@ int main (int argc, char*argv[])
 
 return 0;
 }
+/*
+todo:
+to the code in the sorts function to record the time of the execution
+
+*/
